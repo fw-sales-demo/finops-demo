@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: kindnet
+  namespace: kube-system
+spec:
+  template:
+    spec:
+      containers:
+      - name: kindnet-cni
+        image: kindest/kindnetd:v20220510-4929dd75
+        securityContext:
+          capabilities:
+            add:
+            - NET_RAW
+            - NET_ADMIN
+          privileged: false
+        requests:
+          memory: "2500Mi"
+          cpu: "1000m"
