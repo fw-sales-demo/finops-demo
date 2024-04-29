@@ -3,6 +3,7 @@ kind: DaemonSet
 metadata:
   name: kindnet
   namespace: kube-system
+  team: ops
 spec:
   template:
     spec:
