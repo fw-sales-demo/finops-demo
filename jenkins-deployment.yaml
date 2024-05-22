@@ -4,6 +4,7 @@ metadata:
   name: jenkins
   labels:
     app: jenkins
+    team: cicd-team
 spec:
   replicas: 1
   selector:
